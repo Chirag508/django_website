@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #8b4513, #a0522d, #cd853f);
+            padding: 50px 20px;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .blog-meta {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .blog-meta span {
+            margin-right: 15px;
+        }
+
+        .blog-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .author-bio {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+        }
+
+        .author-bio img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .author-bio div {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .author-bio h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .author-bio p {
+            margin: 5px 0 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007BFF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>{{ blogs.title }}</h1>
+        <p>By {{ blogs.author }} | {{ blogs.published_date }}</p>
+    </div>
+
+    <!-- Blog Content Container -->
+    <div class="container">
+        <!-- Metadata -->
+        <div class="blog-meta">
+            <span><strong>Language:</strong> {{ blogs.language }}</span>
+        </div>
+
+        <!-- Blog Content -->
+        <div class="blog-content">
+            {{ blogs.body }}
+        </div>
+
+        <!-- Author Bio Section -->
+        <div class="author-bio">
+            <img src="https://source.unsplash.com/80x80/?person" alt="Author Image">
+            <div>
+                <h3>{{ blogs.author }}</h3>
+                <p>Passionate about writing and sharing knowledge. Enjoys nature, reading, and exploring new ideas.</p>
+            </div>
+        </div>
+
+        <!-- Back to Blog List -->
+        <a href="{% url 'blogs' %}" class="back-btn">← Back to Blog List</a>
+    </div>
+
+</body>
+</html>
+{% comment %} <h1>{{ blogs.title }}</h1>
+<p><strong>Author:</strong> {{ blogs.author }} <br>
+    <strong>Language:</strong> {{ blogs.language }}<br>
+    <strong>Published:</strong> {{ blogs.published_date}} <br>
+</p>
+<div>
+    <p>{{ blogs.body }}</p>
+</div> {% endcomment %}

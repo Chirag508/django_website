@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}  Home || page  {% endblock title %}
+{% block style %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+
+    .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+        padding: 20px;
+    }
+
+    header {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    main {
+        padding: 20px;
+    }
+</style>
+{% endblock style %}
+{% block body %}
+    <main>
+        <header>
+            <div class="container">
+                <h1>Welcome to My Creative Space</h1>
+            </div>
+        </header>
+        <div class="container">
+            <h2>Hello There!</h2>
+            <p>
+                Welcome to my digital home. This is where creativity meets design, 
+                and ideas come to life. Explore, discover, and get inspired by the 
+                possibilities that await you.
+            </p>
+            <p>
+                Whether you're here to learn, collaborate, or simply browse, 
+                I'm excited to share this journey with you.
+            </p>
+        </div>
+    </main>
+    {% endblock body %}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} title here {% endblock title %}</title>
+    {% load static %}
+    <style>
+        nav {
+            background: #f4f4f4;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+    
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+    
+        .admin-btn {
+            background: #ff4500;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+    
+        .logo img {
+            width: 50px; /* Set desired size */
+            height: 50px; /* Ensure it's a square */
+            border-radius: 50%; /* Make it round */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+        }
+    
+        .logo img:hover {
+            transform: scale(1.1); /* Slightly enlarge on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+        }
+    </style>
+    
+    {% block style %}
+    style here
+    {% endblock style %}
+</head>
+
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="{% url 'home' %}" class="logo"><img src="{% static 'img/logo.jfif' %}" alt="logo"></a>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'blogs' %}">Our-Blogs</a>
+            <a href="{% url 'about' %}">About Us</a>
+            <a href="{% url 'contact' %}">Contact Us</a>
+            <a href="{% url 'product' %}">Products</a>
+        </div>
+        <a href="{% url 'admin:index' %}" class="admin-btn">Admin</a>
+    </nav>
+    {% block body %}
+
+    body here
+
+    {% endblock body %}
+</body>
+
+</html>
